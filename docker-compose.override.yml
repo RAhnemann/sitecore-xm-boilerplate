@@ -7,7 +7,10 @@ services:
   redis:
     image: ${REGISTRY}${COMPOSE_PROJECT_NAME}-redis:${VERSION:-latest}
   mssql:
-    mem_limit: 2GB
+    deploy:
+        resources:
+            limits:
+              memory: 3G
   id:
     image: ${REGISTRY}${COMPOSE_PROJECT_NAME}-id:${VERSION:-latest}
     networks:
