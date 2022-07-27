@@ -1,9 +1,10 @@
 # Sitecore Biolerplate (XM)
 
-This repo holds a basic Sitecore setup with Sitecore XM, SPE, and Headless Services 
+This repo holds a basic Sitecore setup with Sitecore XM, SPE, and Headless Services, running on a latest version of docker compose
 ## Requirements
 
 1. Docker Desktop 4.10.1
+2. Enable docker compose v2 - `docker compose enable-v2`
 
 ## Setup Steps
 
