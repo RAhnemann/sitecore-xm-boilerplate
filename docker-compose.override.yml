@@ -1,0 +1,50 @@
+version: "3"
+
+services:
+  traefik:
+    volumes:
+      - ./docker/traefik:C:/etc/traefik
+  redis:
+    image: ${REGISTRY}${COMPOSE_PROJECT_NAME}-redis:${VERSION:-latest}
+  mssql:
+    mem_limit: 2GB
+
+  id:
+    image: ${REGISTRY}${COMPOSE_PROJECT_NAME}-id:${VERSION:-latest}
+    networks:
+      default:
+        aliases:
+          - ${ID_HOST}
+  cd:
+    image: ${REGISTRY}${COMPOSE_PROJECT_NAME}-cd:${VERSION:-latest}
+    volumes:
+      - ${LOCAL_DEPLOY_PATH}\website\:C:\deploy\
+      - ${LOCAL_DATA_PATH}\cd\:C:\inetpub\wwwroot\App_Data\logs\
+    environment:
+      SITECORE_DEVELOPMENT_PATCHES: DevEnvOn,CustomErrorsOff,HttpErrorsDetailed,DebugOn,DiagnosticsOff,InitMessagesOff,RobotDetectionOff
+    entrypoint: powershell -Command "& C:\\tools\\entrypoints\\iis\\Development.ps1"
+    networks:
+      default:
+        aliases:
+          - ${CD_HOST}
+  cm:
+    image: ${REGISTRY}${COMPOSE_PROJECT_NAME}-cm:${VERSION:-latest}
+    volumes:
+      - ${LOCAL_DEPLOY_PATH}\website\:C:\deploy\
+      - ${LOCAL_DATA_PATH}\cm\:C:\inetpub\wwwroot\App_Data\logs\
+    environment:
+      SITECORE_DEVELOPMENT_PATCHES: DevEnvOn,CustomErrorsOff,HttpErrorsDetailed,DebugOn,DiagnosticsOff,InitMessagesOff,RobotDetectionOff
+    entrypoint: powershell -Command "& C:\\tools\\entrypoints\\iis\\Development.ps1"
+    networks:
+      default:
+        aliases:
+          - ${CM_HOST}
+  hostswriter:
+    image: rahnemann/windows-hosts-writer:2.0-nanoserver-1809
+    volumes:
+      - C:\windows\system32\drivers\etc\:C:\driversetc\
+      - type: npipe
+        source: '\\.\pipe\docker_engine\'
+        target: '\\.\pipe\docker_engine\'
+    environment:
+      TERMINATION_MAP: id,cm,cd:traefik
