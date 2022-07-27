@@ -1,4 +1,4 @@
-version: "3"
+version: "3.9"
 
 services:
   traefik:
@@ -8,7 +8,6 @@ services:
     image: ${REGISTRY}${COMPOSE_PROJECT_NAME}-redis:${VERSION:-latest}
   mssql:
     mem_limit: 2GB
-
   id:
     image: ${REGISTRY}${COMPOSE_PROJECT_NAME}-id:${VERSION:-latest}
     networks:
