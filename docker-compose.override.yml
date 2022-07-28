@@ -10,7 +10,7 @@ services:
     deploy:
         resources:
             limits:
-              memory: 3G
+              memory: 2G
   id:
     image: ${REGISTRY}${COMPOSE_PROJECT_NAME}-id:${VERSION:-latest}
     networks:
