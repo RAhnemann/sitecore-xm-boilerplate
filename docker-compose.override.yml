@@ -42,7 +42,7 @@ services:
         aliases:
           - ${CM_HOST}
   hostswriter:
-    image: rahnemann/windows-hosts-writer:2.0-nanoserver-1809
+    image: rahnemann/windows-hosts-writer:2.0-nanoserver-1909
     volumes:
       - C:\windows\system32\drivers\etc\:C:\driversetc\
       - type: npipe
