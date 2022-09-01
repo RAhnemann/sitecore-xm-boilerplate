@@ -1,0 +1,69 @@
+@import 'variables';
+@import './bootstrap-variables';
+@import '~bootstrap/scss/mixins';
+
+@mixin break-sm {
+  @include media-breakpoint-up(sm) {
+    @content;
+  }
+}
+
+@mixin break-md {
+  @include media-breakpoint-up(md) {
+    @content;
+  }
+}
+
+@mixin break-lg {
+  @include media-breakpoint-up(lg) {
+    @content;
+  }
+}
+
+@mixin break-xl {
+  @include media-breakpoint-up(xl) {
+    @content;
+  }
+}
+
+@mixin tablet-and-mobile {
+  @include media-breakpoint-down(lg) {
+    @content;
+  }
+}
+
+@mixin mobile-only {
+  @include media-breakpoint-down(md) {
+    @content;
+  }
+}
+
+@mixin xs-mobile-only {
+  @include media-breakpoint-down(sm) {
+    @content;
+  }
+}
+
+//*********************************************
+// named font-weight helper
+
+$weights: (
+  'thin': 100,
+  'extraLight': 200,
+  'light': 300,
+  'regular': 400,
+  'medium': 500,
+  'semiBold': 600,
+  'bold': 700,
+  'extraBold': 800,
+  'black': 900,
+);
+
+@function fw($name) {
+  @return map-get($map: $weights, $key: $name);
+}
+
+// how to use:
+// in your css: font-weight: fw(extraLight)
+
+//*********************************************

@@ -1,0 +1,79 @@
+@import 'common';
+@import 'fonts';
+@import './bootstrap';
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  /* 62.5% of 16px base font size is 10px */
+  font-size: 62.5%;
+
+  &:not(.experience-editor) {
+    overflow: hidden;
+  }
+}
+
+body {
+  /* 16px */
+  font-size: 1.6rem;
+  font-family: $poppins;
+
+  &:not(.experience-editor) {
+    overflow: auto;
+
+    /* Ensures body doesn't scroll on mobile when mobile menu is open */
+    @include tablet-and-mobile {
+      &.menu-open {
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+#root .scEmptyPlaceholder {
+  width: 100%;
+}
+
+@include break-md {
+  #root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.container {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/*
+  Hides Sitecore Experience Editor markup,
+  if you run the app in connected mode while the Sitecore cookies
+  are set to edit mode.
+*/
+.scChromeData,
+.scpm {
+  display: none !important;
+}
+
+.background {
+  background-color: $neutralSnow !important;
+  width: 100%;
+  height: fit-content;
+}
+
+.rotate-180 {
+  transform: rotate(180deg);
+}
+
+main {
+  width: 100%;
+}
+
+@import './typography';
+@import 'buttons';
+@import 'spacers';

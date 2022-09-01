@@ -1,0 +1,74 @@
+@import './common';
+
+.spacer {
+  $spacerRoot: &;
+
+  background-color: $white;
+  height: $sm-spacer-height;
+  position: relative;
+  width: 100%;
+  z-index: -1;
+
+  &--curved {
+    background-color: $neutralSnow;
+    height: $sm-curved-spacer-height;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+
+    &--bottom {
+      transform: scale(1, -1) translateZ(0);
+    }
+
+    &:before {
+      background-color: $white;
+      border-radius: 50%;
+      content: '';
+      display: block;
+      height: $sm-curved-spacer-height * 2;
+      left: 50%;
+      position: absolute;
+      top: -$sm-curved-spacer-height - ($sm-curved-spacer-height / 3.25);
+      transform: translateX(-50%);
+      width: 105%;
+    }
+  }
+
+  &--blue {
+    &#{$spacerRoot}--curved {
+      background-color: $neutralHurricane;
+    }
+  }
+
+  &--background-snow {
+    &:before {
+      background-color: $neutralSnow;
+    }
+  }
+
+  @include break-md {
+    height: $md-spacer-height;
+
+    &--curved {
+      height: $md-curved-spacer-height;
+
+      &:before {
+        height: $md-curved-spacer-height * 2;
+        top: -($md-curved-spacer-height) - (($md-curved-spacer-height) / 3.25);
+      }
+    }
+  }
+
+  @include break-lg {
+    height: $lg-spacer-height;
+
+    &--curved {
+      height: $lg-curved-spacer-height;
+
+      &:before {
+        height: $lg-curved-spacer-height * 2;
+        top: -$lg-curved-spacer-height - ($lg-curved-spacer-height / 3.25);
+      }
+    }
+  }
+}

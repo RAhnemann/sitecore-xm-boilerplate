@@ -1,0 +1,92 @@
+// Non-Boostrap Variables
+// Place any Boostrap related sass variable overrides in the _bootstrap-variables file
+
+$primarySky: #3a98e5;
+$primaryLight: #59a5e2;
+$primaryDark: #1f88de;
+
+$secondaryGreen: #7cc694;
+$secondaryGreenLight: #91cea5;
+$secondaryGreenDark: #6bbb85;
+
+$secondaryRed: #f06e61;
+$secondaryRedLight: #f98d82;
+$secondaryRedDark: #e36357;
+
+$secondaryYellow: #f6bd4e;
+$secondaryYellowLight: #fdcb6b;
+$secondaryYellowDark: #ecb241;
+
+$neutralDeepSea: #141e2b;
+$neutralHurricane: #2e4664;
+$neutralStorm: #4a6382;
+$neutralClouds: #6b7d94;
+$neutralFog: #9eafc2;
+$neutralIce: #e5eaef;
+$neutralSnow: #f8fafc;
+
+$storm: #385263;
+
+$white: #ffffff;
+
+$headline: 'Tiempos Headline Bold', 'serif';
+$poppins: 'Poppins', sans-serif;
+
+$borderRadius1: 24px;
+$borderRadius2: 16px;
+$borderRadius3: 8px;
+$buttonBorderRadius: 30px;
+
+$sizzleShadow: 0px 4px 16px rgba(20, 30, 43, 0.06), 0px 30px 30px -30px rgba(20, 30, 43, 0.16);
+$hardSizzleShadow: 0px 4px 16px rgba(20, 30, 43, 0.16), 0px 30px 30px -16px rgba(20, 30, 43, 0.06);
+$softSizzleShadow: 0px 20px 20px -20px rgba(20, 30, 43, 0.1);
+$reverseSizzleShadow: 0px -4px 16px rgba(20, 30, 43, 0.04),
+  0px -30px 30px -16px rgba(20, 30, 43, 0.06);
+$softShadow: 0px 6px 14px rgba(20, 30, 43, 0.06);
+$mildShadow: 0px 8px 24px rgba(20, 30, 43, 0.08);
+$mediumShadow: 0px 6px 16px rgba(20, 30, 43, 0.1);
+$spicyShadow: 0px 4px 8px rgba(20, 30, 43, 0.12);
+$leftShadow: -15px 0px 20px rgba(20, 30, 43, 0.06);
+
+// max width of our grid containers
+$xl-container: 1200px;
+$lg-container: 960px;
+
+// GlobalNavigation.
+$global-navigation-transition-ms: 350; // Must be in sync with Constants.CSS.GlobalNavigationTransitionMs
+$global-header-height: 75px; // Must be in sync with Constants.CSS.GlobalHeaderHeight
+
+// Default dimensions.
+$sm-spacer-height: 24px;
+$md-spacer-height: 40px;
+$lg-spacer-height: 48px;
+
+// Curved dimensions.
+$sm-curved-spacer-height: 32px;
+$md-curved-spacer-height: 64px;
+$lg-curved-spacer-height: 128px;
+
+:export {
+  globalHeaderHeight: $global-header-height;
+  primarySky: $primarySky;
+  primaryLight: $primaryLight;
+  primaryDark: $primaryDark;
+  secondaryGreen: $secondaryGreen;
+  secondaryGreenLight: $secondaryGreenLight;
+  secondaryGreenDark: $secondaryGreenDark;
+  secondaryRed: $secondaryRed;
+  secondaryRedLight: $secondaryRedLight;
+  secondaryRedDark: $secondaryRedDark;
+  secondaryYellow: $secondaryYellow;
+  secondaryYellowLight: $secondaryYellowLight;
+  secondaryYellowDark: $secondaryYellowDark;
+  neutralDeepSea: $neutralDeepSea;
+  neutralHurricane: $neutralHurricane;
+  neutralStorm: $neutralStorm;
+  neutralClouds: $neutralClouds;
+  neutralFog: $neutralFog;
+  neutralIce: $neutralIce;
+  neutralSnow: $neutralSnow;
+  storm: $storm;
+  globalNavigationTransitionMs: $global-navigation-transition-ms;
+}
