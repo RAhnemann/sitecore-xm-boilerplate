@@ -1,0 +1,21 @@
+{
+  "plugins": [
+    "ssr-friendly"
+  ],
+  "extends": [
+    "react-app",
+    "react-app/jest",
+    "plugin:yaml/recommended",
+    "plugin:ssr-friendly/recommended"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "**/*.stories.*"
+      ],
+      "rules": {
+        "import/no-anonymous-default-export": "off"
+      }
+    }
+  ]
+}

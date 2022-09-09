@@ -2,16 +2,15 @@ module.exports = {
   webpackFinal(config) {
     config.module.rules.push({
       test: /\.(js|mjs|jsx)$/,
+      type: "json",
       enforce: 'pre',
       loader: require.resolve('source-map-loader'),
-      resolve: {
-        fullySpecified: false,
-      },
+      
     });
     return config;
   },
   core: {
-    builder: 'webpack5',
+    builder: 'webpack4',
   },
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
