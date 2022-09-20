@@ -3,7 +3,7 @@ import { MINIMAL_VIEWPORTS } from '@storybook/addon-viewport';
 import '../src/scss/global.scss';
 
 const customViewports = {
-  hubMobile: {
+  mostMobile: {
     name: 'Mobile 375px',
     styles: {
       width: '375px',
