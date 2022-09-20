@@ -1,4 +1,4 @@
-import { MockedProvider } from '@apollo/react-testing';
+import { MockedProvider } from '@apollo/client/testing';
 import { MINIMAL_VIEWPORTS } from '@storybook/addon-viewport';
 import '../src/scss/global.scss';
 
