@@ -3,7 +3,7 @@
 This repo holds a basic Sitecore setup with Sitecore XM, SPE, and Headless Services, running on a latest version of docker compose
 ## Requirements
 
-1. Docker Desktop 4.10.1
+1. Docker Desktop 4.12.1
 2. Enable docker compose v2 - `docker compose enable-v2`
 
 ## Setup Steps
@@ -28,3 +28,8 @@ This repo holds a basic Sitecore setup with Sitecore XM, SPE, and Headless Servi
 4. Start Sitecore: `docker compose up -d --remove-orphans`  
    * You won't need the `remove-orphans` after the first time you run this.  
 5. Deploy your code into the .\docker\deploy\website folder and magics!
+
+# Configuring the Content Hub Connector
+
+This guide follows along with https://doc.sitecore.com/xp/en/developers/connect-for-ch/50/connect-for-content-hub/walkthrough--preparing-to-install-the-scch-connector-module-in-a-container-environment.html
+
