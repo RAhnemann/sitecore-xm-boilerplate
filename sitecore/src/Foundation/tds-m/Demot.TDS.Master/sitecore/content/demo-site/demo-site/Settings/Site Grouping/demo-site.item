@@ -1,0 +1,93 @@
+----item----
+version: 1
+id: {E6B63DA9-B4B2-4CA6-9E31-08A2D5CCA8AC}
+database: master
+path: /sitecore/content/demo-site/demo-site/Settings/Site Grouping/demo-site
+parent: {27388210-32A9-4DF1-A683-45C4A77C95D9}
+name: demo-site
+master: {45CF9F42-B3AC-4412-AAB9-F8441C7E448E}
+template: {E46F3AF2-39FA-4866-A157-7017C4B2A40C}
+templatekey: Site
+
+----field----
+field: {CB4E9E2E-2B66-43DC-AD3F-9CAF363D28D3}
+name: SiteName
+key: sitename
+content-length: 9
+
+demo-site
+----field----
+field: {DA06D09E-02B6-464A-80FC-9D8D7FC875E3}
+name: Environment
+key: environment
+content-length: 1
+
+*
+----field----
+field: {8E0DD914-9AFB-4D45-BF8B-7FF5D6E5337E}
+name: HostName
+key: hostname
+content-length: 21
+
+demo-cm.dev.localhost
+----field----
+field: {1EE576AF-BA8E-4312-9FBD-2CCF8395BAA1}
+name: StartItem
+key: startitem
+content-length: 38
+
+{4518A21C-E6A9-4B64-AB99-193619090116}
+----field----
+field: {F6D8A61C-2F84-4401-BD24-52D2068172BC}
+name: __Originator
+key: __originator
+content-length: 38
+
+{23E42340-77BE-49FC-A7C4-77D3CB545223}
+----version----
+language: en
+version: 1
+revision: a981253e-cc9c-4f8b-9be2-1347794b42de
+
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20220922T162858Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+a981253e-cc9c-4f8b-9be2-1347794b42de
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20220922T162859Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\Admin

@@ -1,0 +1,79 @@
+----item----
+version: 1
+id: {FDA6E872-B063-401D-9FF8-41AA91307A12}
+database: master
+path: /sitecore/layout/Layouts/Project/demo-site/Demo Layout
+parent: {4117830C-D769-48AE-A556-DD178457B78E}
+name: Demo Layout
+master: {00000000-0000-0000-0000-000000000000}
+template: {E4E11508-04A4-4B0B-A263-5201F811C9CD}
+templatekey: SXA JSS Layout
+
+----field----
+field: {A036B2BC-BA04-44F6-A75F-BAE6CD242ABF}
+name: Path
+key: path
+content-length: 36
+
+/Views/SXA JSS/SXA JSS Layout.cshtml
+----field----
+field: {80334869-86DC-4472-AA89-44CF1B2F6C9B}
+name: Placeholders
+key: placeholders
+content-length: 38
+
+{7DBF6F20-9410-4E83-82B9-2496CE7D4B01}
+----field----
+field: {9C6106EA-7A5A-48E2-8CAD-F0F693B1E2D4}
+name: __Read Only
+key: __read only
+content-length: 0
+
+
+----version----
+language: en
+version: 1
+revision: 3f7f355f-d1ba-4dfb-97a3-5d3e469645da
+
+----field----
+field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
+name: __Display name
+key: __display name
+content-length: 0
+
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20190111T114424Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+3f7f355f-d1ba-4dfb-97a3-5d3e469645da
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20220922T192041Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\Admin

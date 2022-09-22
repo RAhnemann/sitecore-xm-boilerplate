@@ -1,0 +1,79 @@
+----item----
+version: 1
+id: {C5B9AC7A-B227-4704-BB83-8F0C98412F3F}
+database: master
+path: /sitecore/content/demo-site/demo-site/Dictionary
+parent: {CD037A8D-5C90-4152-8241-F6F7498D46BF}
+name: Dictionary
+master: {45CF9F42-B3AC-4412-AAB9-F8441C7E448E}
+template: {0A2847E6-9885-450B-B61E-F9E6528480EF}
+templatekey: Dictionary Domain
+
+----field----
+field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
+name: __Icon
+key: __icon
+content-length: 22
+
+Office/32x32/book2.png
+----field----
+field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
+name: __Sortorder
+key: __sortorder
+content-length: 4
+
+1700
+----field----
+field: {F6D8A61C-2F84-4401-BD24-52D2068172BC}
+name: __Originator
+key: __originator
+content-length: 38
+
+{95DA6E6D-AA58-4322-A36E-E5C63FCF1AD1}
+----version----
+language: en
+version: 1
+revision: cf99c4cb-8c8e-4059-8f3b-a7ddefb2d18f
+
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20220922T162858Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+cf99c4cb-8c8e-4059-8f3b-a7ddefb2d18f
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20220922T162858Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\Admin

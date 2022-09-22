@@ -1,0 +1,79 @@
+----item----
+version: 1
+id: {4518A21C-E6A9-4B64-AB99-193619090116}
+database: master
+path: /sitecore/content/demo-site/demo-site/Home
+parent: {CD037A8D-5C90-4152-8241-F6F7498D46BF}
+name: Home
+master: {45CF9F42-B3AC-4412-AAB9-F8441C7E448E}
+template: {1468DE65-F538-4664-9819-A20F14629B77}
+templatekey: Homepage
+
+----field----
+field: {24171BF1-C0E1-480E-BE76-4C0A1876F916}
+name: Page Design
+key: page design
+content-length: 38
+
+{7DC299FF-F45C-49D9-AFDB-B19845D55814}
+----field----
+field: {F6D8A61C-2F84-4401-BD24-52D2068172BC}
+name: __Originator
+key: __originator
+content-length: 38
+
+{F558BEC9-C602-4D7A-B9A1-D0411C946EA4}
+----version----
+language: en
+version: 1
+revision: 003d64fa-a322-47a0-8372-9d3cb9d0fcb3
+
+----field----
+field: {75577384-3C97-45DA-A847-81B00500E250}
+name: Title
+key: title
+content-length: 31
+
+Welcome to Sitecore Demo Thing!
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20220922T162858Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+003d64fa-a322-47a0-8372-9d3cb9d0fcb3
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20220922T164914Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\Admin
