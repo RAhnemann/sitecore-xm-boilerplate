@@ -1,16 +1,16 @@
 {
-  "name": "boilerplate-site",
+  "name": "demo-site",
   "description": "Application utilizing Sitecore JavaScript Services and React (create-react-app).",
   "version": "20.0.3",
   "private": true,
   "config": {
-    "appName": "boilerplate-site",
+    "appName": "demo-site",
     "rootPlaceholders": [
       "jss-main"
     ],
-    "sitecoreDistPath": "/dist/boilerplate-site",
+    "sitecoreDistPath": "/dist/demo-site",
     "sitecoreConfigPath": "/App_Config/Include/zzz",
-    "graphQLEndpointPath": "/api/boilerplate-site",
+    "graphQLEndpointPath": "/api/demo-site",
     "language": "en",
     "tunnelUrl": "http://jss.ngrok.io"
   },
