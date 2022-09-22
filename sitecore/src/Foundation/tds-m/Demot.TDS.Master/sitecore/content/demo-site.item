@@ -1,0 +1,100 @@
+----item----
+version: 1
+id: {D1253545-95BA-4A0F-B5BA-C43DEAEC3E15}
+database: master
+path: /sitecore/content/demo-site
+parent: {0DE95AE4-41AB-4D01-9EB0-67441B7C2450}
+name: demo-site
+master: {2D3805B9-3089-44F3-B952-D45C44ADD7F8}
+template: {14DE9566-21E7-41FE-B702-8AAA85A2E8BA}
+templatekey: Headless Tenant
+
+----field----
+field: {9C596379-F8D4-45D1-A064-CDF1EDE2E7C7}
+name: Templates
+key: templates
+content-length: 38
+
+{661FD691-FFD5-4C53-8922-3B0EB6261342}
+----field----
+field: {E90A4413-C111-4951-9B6A-00C4CE7FB289}
+name: MediaLibrary
+key: medialibrary
+content-length: 38
+
+{39181EDD-2029-4049-AB93-B5E4AC3BA916}
+----field----
+field: {800DC4ED-0846-45BA-B112-19902AF240F6}
+name: SharedMediaLibrary
+key: sharedmedialibrary
+content-length: 38
+
+{2E9AB9C5-0E5C-4619-909F-797DC01047CF}
+----field----
+field: {853B245F-53E4-4EBE-BAB5-299F9DE314B6}
+name: RenderingsFolder
+key: renderingsfolder
+content-length: 38
+
+{6E456EA4-F955-45A6-BD82-FC86AFBFF44D}
+----field----
+field: {1230D2CB-4948-4D43-8A3B-B39978F6F1B3}
+name: Modules
+key: modules
+content-length: 77
+
+{D912C30C-7A98-4A8D-A094-611D9AF9605D}|{6DE1F4E9-815D-491D-923D-D5038100DBEE}
+----field----
+field: {102B58DA-2A86-4953-B3CD-C9F91256B657}
+name: PlaceholderSettingsFolder
+key: placeholdersettingsfolder
+content-length: 38
+
+{1C7E75A6-319E-4B1A-9565-981C7BB1435B}
+----field----
+field: {F6D8A61C-2F84-4401-BD24-52D2068172BC}
+name: __Originator
+key: __originator
+content-length: 38
+
+{8453C078-6D17-4817-9230-91654AFE69C6}
+----version----
+language: en
+version: 1
+revision: e770f586-971f-4303-b176-36d1ed80ec26
+
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20220922T162829Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+e770f586-971f-4303-b176-36d1ed80ec26
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20220922T162830Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\Admin
