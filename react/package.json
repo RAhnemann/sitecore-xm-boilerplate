@@ -6,9 +6,7 @@
   "config": {
     "appName": "boilerplate-site",
     "rootPlaceholders": [
-      "jss-header",
-      "jss-main",
-      "jss-footer"
+      "jss-main"
     ],
     "sitecoreDistPath": "/dist/boilerplate-site",
     "sitecoreConfigPath": "/App_Config/Include/zzz",
@@ -46,9 +44,9 @@
     "js-sha256": "^0.9.0",
     "react": "^17.0.2",
     "react-app-polyfill": "^1.0.6",
-    "react-app-rewired": "^2.2.1",
     "react-dom": "^17.0.2",
     "react-helmet": "~5.2.1",
+    "react-hot-loader": "4.13.0",
     "react-i18next": "~11.3.3",
     "react-router-dom": "~5.1.0",
     "react-scripts": "^5.0.1",
@@ -124,16 +122,16 @@
     "build:rendering-host": "npm-run-all --serial bootstrap:connected build:client:rendering-host build:server afterbuild:rendering-host",
     "afterbuild:rendering-host": "del-cli build-rendering-host && move-cli build build-rendering-host",
     "scaffold": "node scripts/scaffold-component.js",
-    "start:react": "react-app-rewired start",
+    "start:react": "react-scripts start",
     "start:proxy": "node scripts/disconnected-mode-proxy.js",
     "start:watch-components": "node scripts/generate-component-factory.js --watch",
-    "build:client": "cross-env-shell PUBLIC_URL=$npm_package_config_sitecoreDistPath \"react-app-rewired build\"",
-    "build:client:rendering-host": "cross-env-shell PUBLIC_URL=$npm_package_config_tunnelUrl \"react-app-rewired build\"",
+    "build:client": "cross-env-shell PUBLIC_URL=$npm_package_config_sitecoreDistPath \"react-scripts build\"",
+    "build:client:rendering-host": "cross-env-shell PUBLIC_URL=$npm_package_config_tunnelUrl \"react-scripts build\"",
     "build:server": "cross-env-shell NODE_ENV=production \"webpack --config server/server.webpack.config.js\"",
     "bootstrap:connected": "node scripts/bootstrap.js",
     "bootstrap:disconnected": "node scripts/bootstrap.js --disconnected",
     "graphql:update": "node -r @babel-register ./scripts/update-graphql-fragment-data.js",
-    "test": "react-app-rewired test --env=jsdom",
+    "test": "react-scripts test --env=jsdom",
     "lint": "eslint ./src ./sitecore/definitions ./scripts ./server ./data",
     "eject": "react-scripts eject",
     "eject:script": "ncp ./scripts ./scripts-copy && node ./scripts-copy/eject.js && ncp ./scripts-copy ./scripts && del-cli ./scripts-copy",
@@ -159,5 +157,8 @@
     "*.{js,jsx,scss,css,md,yml}": [
       "prettier --write"
     ]
+  },
+  "resolutions": {
+    "@storybook/react/webpack": "^5"
   }
 }

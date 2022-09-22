@@ -21,6 +21,10 @@ module.exports = {
   module: {
     rules: [
       {
+        include: path.resolve(__dirname, '..', "node_modules", "@apollo", "client", 'react', 'ssr'),
+        type: "javascript/auto"
+      },
+      {
         test: /\.m?jsx?$/,
         exclude: /node_modules/,
         use: {

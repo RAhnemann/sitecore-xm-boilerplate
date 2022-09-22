@@ -25,8 +25,6 @@ services:
     depends_on:
       id:
         condition: service_healthy
-      cd:
-        condition: service_healthy
       cm:
         condition: service_healthy
   redis:
