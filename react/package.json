@@ -1,7 +1,7 @@
 {
   "name": "demo-site",
   "description": "Application utilizing Sitecore JavaScript Services and React (create-react-app).",
-  "version": "20.0.3",
+  "version": "20.0.1",
   "private": true,
   "config": {
     "appName": "demo-site",
@@ -10,18 +10,17 @@
     ],
     "sitecoreDistPath": "/dist/demo-site",
     "sitecoreConfigPath": "/App_Config/Include/zzz",
-    "graphQLEndpointPath": "/api/demo-site",
+    "graphQLEndpointPath": "/sitecore/api/graph/edge",
     "language": "en",
     "tunnelUrl": "http://jss.ngrok.io"
   },
   "engines": {
-    "node": ">=8.1",
-    "npm": ">=5.6.0",
-    "yarn": "yarn is not supported, please use npm"
+    "node": ">=12",
+    "npm": ">=6"
   },
   "author": {
     "name": "Sitecore Corporation",
-    "url": "https://jss.sitecore.net"
+    "url": "https://jss.sitecore.com"
   },
   "repository": {
     "type": "git",
@@ -33,7 +32,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@apollo/client": "^3.6.9",
-    "@sitecore-jss/sitecore-jss-react": "^20.0.3",
+    "@sitecore-jss/sitecore-jss-react": "^20.0.1",
     "axios": "^0.21.1",
     "bootstrap": "^5.1.3",
     "cross-fetch": "^3.0.6",
@@ -58,9 +57,9 @@
     "@babel/core": "^7.19.1",
     "@babel/preset-env": "^7.19.1",
     "@babel/register": "~7.6.2",
-    "@sitecore-jss/sitecore-jss-cli": "^20.0.3",
-    "@sitecore-jss/sitecore-jss-dev-tools": "^20.0.3",
-    "@sitecore-jss/sitecore-jss-rendering-host": "^20.0.3",
+    "@sitecore-jss/sitecore-jss-cli": "^20.0.1",
+    "@sitecore-jss/sitecore-jss-dev-tools": "^20.0.1",
+    "@sitecore-jss/sitecore-jss-rendering-host": "^20.0.1",
     "@storybook/addon-a11y": "^6.5.12",
     "@storybook/addon-actions": "^6.5.12",
     "@storybook/addon-essentials": "^6.5.12",
@@ -112,14 +111,11 @@
     "generate": "plop component",
     "generate-page": "plop page",
     "jss": "jss",
-    "start": "npm-run-all --serial bootstrap:disconnected --parallel start:react start:proxy start:watch-components",
-    "start:connected": "scjss-verify-setup && npm-run-all --serial bootstrap:connected start:react start:watch-components",
-    "start:connected-ssr": "scjss-verify-setup && npm-run-all --serial bootstrap:connected --parallel start:react start:watch-components start:http-renderer-holygrail",
-    "start:holygrail": "scjss-verify-setup && npm-run-all --serial bootstrap:connected --parallel start:watch-components start:http-renderer-holygrail",
-    "start:http-renderer-holygrail": "cross-env-shell NODE_ENV=development JSS_RENDER_ENGINE=http \"node scripts/holygrail.js\"",
+    "start": "cross-env-shell JSS_MODE=disconnected \"npm-run-all --serial bootstrap --parallel start:react start:proxy start:watch-components\"",
+    "start:connected": "scjss-verify-setup && npm-run-all --serial bootstrap start:react start:watch-components",
     "start:rendering-host": "cross-env-shell NODE_ENV=development JSS_RENDER_ENGINE=http \"node scripts/http-renderer.js\"",
-    "build": "npm-run-all --serial bootstrap:connected build:client build:server",
-    "build:rendering-host": "npm-run-all --serial bootstrap:connected build:client:rendering-host build:server afterbuild:rendering-host",
+    "build": "npm-run-all --serial bootstrap build:client build:server",
+    "build:rendering-host": "npm-run-all --serial bootstrap build:client:rendering-host build:server afterbuild:rendering-host",
     "afterbuild:rendering-host": "del-cli build-rendering-host && move-cli build build-rendering-host",
     "scaffold": "node scripts/scaffold-component.js",
     "start:react": "react-scripts start",
@@ -128,11 +124,10 @@
     "build:client": "cross-env-shell PUBLIC_URL=$npm_package_config_sitecoreDistPath \"react-scripts build\"",
     "build:client:rendering-host": "cross-env-shell PUBLIC_URL=$npm_package_config_tunnelUrl \"react-scripts build\"",
     "build:server": "cross-env-shell NODE_ENV=production \"webpack --config server/server.webpack.config.js\"",
-    "bootstrap:connected": "node scripts/bootstrap.js",
-    "bootstrap:disconnected": "node scripts/bootstrap.js --disconnected",
-    "graphql:update": "node -r @babel-register ./scripts/update-graphql-fragment-data.js",
+    "bootstrap": "cross-env-shell FETCH_WITH=REST \"node scripts/bootstrap.js\"",
+    "graphql:update": "node -r @babel/register ./scripts/update-graphql-fragment-data.js",
     "test": "react-scripts test --env=jsdom",
-    "lint": "eslint ./src ./sitecore/definitions ./scripts ./server ./data",
+    "lint": "eslint ./src/**/*.js ./sitecore/definitions/**/*.js ./scripts/**/*.js ./server/**/*.js ./data/**/*.yml",
     "eject": "react-scripts eject",
     "eject:script": "ncp ./scripts ./scripts-copy && node ./scripts-copy/eject.js && ncp ./scripts-copy ./scripts && del-cli ./scripts-copy",
     "storybook": "start-storybook -p 6006 -s public",
