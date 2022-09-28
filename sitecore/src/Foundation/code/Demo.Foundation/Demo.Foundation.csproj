@@ -92,12 +92,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pipelines\LayoutService\InitializeJsonRendering.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Include\Foundation\Demo\Demo.Foundation.CustomJSSApp.config" />
-    <Content Include="App_Config\Include\Foundation\Demo\Demo.Foundation.InitializeJsonRendering.config" />
+    <Content Include="App_Config\Include\Foundation\Demo\Demo.Foundation.AppDefinition.config" />
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\Docker Local.pubxml" />
   </ItemGroup>

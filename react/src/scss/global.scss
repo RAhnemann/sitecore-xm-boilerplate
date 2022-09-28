@@ -2,37 +2,6 @@
 @import 'fonts';
 @import './bootstrap';
 
-html,
-body {
-  height: 100%;
-}
-
-html {
-  /* 62.5% of 16px base font size is 10px */
-  font-size: 62.5%;
-
-  &:not(.experience-editor) {
-    overflow: hidden;
-  }
-}
-
-body {
-  /* 16px */
-  font-size: 1.6rem;
-  font-family: $poppins;
-
-  &:not(.experience-editor) {
-    overflow: auto;
-
-    /* Ensures body doesn't scroll on mobile when mobile menu is open */
-    @include tablet-and-mobile {
-      &.menu-open {
-        overflow: hidden;
-      }
-    }
-  }
-}
-
 #root .scEmptyPlaceholder {
   width: 100%;
 }
@@ -60,19 +29,31 @@ body {
   display: none !important;
 }
 
-.background {
-  background-color: $neutralSnow !important;
-  width: 100%;
-  height: fit-content;
+
+html, body {
+  box-sizing: border-box;
+  height: 100%;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 13px;
+  margin: 0px;
+  color: #131313;
 }
 
-.rotate-180 {
-  transform: rotate(180deg);
+button, input, optgroup, select, textarea {
+  font-family: inherit;
 }
 
-main {
-  width: 100%;
+
+a:link {
+  text-decoration: none;
+  color: #0088cc;
 }
+
+a:hover {
+  text-decoration: underline;
+}
+
+
 
 @import './typography';
 @import 'buttons';

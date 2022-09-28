@@ -22,22 +22,24 @@ export const Default = Template.bind({});
 
 Default.args = {
   params: {},
-  sitecoreContext: {
-    route: {
-      fields: {
-        Logo: {
-          value: ''
-        },
-        Title: {
-          value: 'Welcome to RP Storybook!'
-        },
-        Logo: {
-          value: {
-            src: '',
-            alt: 'Sitecore Betty',
-          },
-        },
-      }
-    }
+  fields: {
+    LogoImage: {
+      value: {
+        src: '/local/Home/Project/demo-site/demo-site/sc_logo.png',
+        alt: 'Sitecore Logo',
+      },
+    },
+    HeroImage: {
+      value: {
+        src: '/local/Home/Project/demo-site/demo-site/sitecore-betty.jpg',
+        alt: 'Sitecore Betty',
+      },
+    },
+    Title: {
+      value: 'Welcome to RP Storybook!!'
+    },
+    BodyText: {
+      value: '<strong>Bacon ipsum</strong> dolor amet fatback porchetta bresaola pork chop boudin pancetta kielbasa turkey tongue bacon pork belly pig. Filet mignon turducken brisket, corned beef salami tri-tip hamburger leberkas. Short loin picanha ham meatball cow chislic bacon cupim brisket ribeye rump pork chop porchetta jerky strip steak. Pastrami meatloaf bresaola ground round pork picanha burgdoggen cupim meatball doner tongue sirloin t-bone jerky pork chop.'
+    },
   }
 };

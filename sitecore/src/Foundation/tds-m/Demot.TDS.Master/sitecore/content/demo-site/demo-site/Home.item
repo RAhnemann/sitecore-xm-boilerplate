@@ -26,7 +26,7 @@ content-length: 38
 ----version----
 language: en
 version: 1
-revision: 003d64fa-a322-47a0-8372-9d3cb9d0fcb3
+revision: fe3a175c-7bff-433f-9e7e-93000fbb0bbf
 
 ----field----
 field: {75577384-3C97-45DA-A847-81B00500E250}
@@ -35,6 +35,13 @@ key: title
 content-length: 31
 
 Welcome to Sitecore Demo Thing!
+----field----
+field: {04BF00DB-F5FB-41F7-8AB7-22408372A981}
+name: __Final Renderings
+key: __final renderings
+content-length: 186
+
+<r xmlns:p="p" xmlns:s="s" p:p="1"><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"><r uid="{5AFF61CE-D95C-440C-BEF2-61F28A6AC3F4}" s:ds="{5AE1D1F2-0E85-4DAA-847E-6D3525213071}" /></d></r>
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
 name: __Owner
@@ -62,14 +69,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-003d64fa-a322-47a0-8372-9d3cb9d0fcb3
+fe3a175c-7bff-433f-9e7e-93000fbb0bbf
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20220922T164914Z
+20220926T203403Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

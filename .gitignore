@@ -70,8 +70,6 @@ build/
 # Log files
 *.log
 
-scjssconfig.json
-!**/env/*/scjssconfig.json
 *.deploysecret.config
 /build-rendering-host
 

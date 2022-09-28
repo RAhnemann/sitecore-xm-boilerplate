@@ -16,10 +16,24 @@ key: componentname
 content-length: 13
 
 HelloSitecore
+----field----
+field: {B5B27AF1-25EF-405C-87CE-369B3A004016}
+name: Datasource Location
+key: datasource location
+content-length: 178
+
+query:$site/*[@@name='Data']/*[@@templateid='{7FFC0776-8A12-4CAA-946D-0F01D004BBED}']|query:$sharedSites/*[@@name='Data']/*[@@templateid='{7FFC0776-8A12-4CAA-946D-0F01D004BBED}']
+----field----
+field: {1A7C85E5-DC0B-490D-9187-BB1DBCB4C72F}
+name: Datasource Template
+key: datasource template
+content-length: 67
+
+/sitecore/templates/Project/demo-site/Hello/Hello Sitecore Settings
 ----version----
 language: en
 version: 1
-revision: 82d9307e-2f65-4cbc-ade5-137f446dea39
+revision: 42831c5b-f1e3-40e8-b856-3caa7ce69b5c
 
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
@@ -48,14 +62,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-82d9307e-2f65-4cbc-ade5-137f446dea39
+42831c5b-f1e3-40e8-b856-3caa7ce69b5c
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20220922T164140Z
+20220926T203245Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

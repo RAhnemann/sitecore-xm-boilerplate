@@ -1,242 +1,61 @@
 @import '../../scss/common';
 
-// In Figma this is the "XS" break point
-.home-hero {
-  min-height: 470px;
-  position: relative;
+#CenterColumn {
+  margin: auto;
+  padding-right: 20px;
+  padding-left: 20px;
+  max-width: 1170px;
+  min-height: 402px;
+  background-repeat: no-repeat;
+  background-color: white;
+  background-size: 1170px 402px;
+  text-align: left;
+}	
+
+#InnerCenter {
+  margin: auto;	
+  position:relative;
+  width:1150px;
+  height:700px;
+}	
+
+#Header {
+  height:402px;
+}	
+
+#Footer {
+  width:100%;
+  clear:both; 
+  padding-top:2px;
+}	
+
+#LeftContent {
+      width:750px;
+    text-align: justify;
+}
+
+#scLogo {
+  margin-top:20px;
+}
+
+.contentTitle {
+  margin-top: 50px;
+  font-weight:400;
+  font-size: 36px;
+}
+
+.divider {
+  background-color: #DCDCDC;
+  border: 0 none;
+  clear: both;
+  display: block;
+  height: 1px;
+  float:none;
+  margin: 50px auto;
   width: 100%;
-  overflow: hidden;
-
-  --borderBtmOffset: 7px;
-  bottom: calc(var(--borderBtmOffset) * -1);
-
-  &__bottom-border {
-    padding: 0;
-    margin: 0;
-    display: block;
-    position: absolute;
-    bottom: var(--borderBtmOffset);
-    left: 0;
-    width: 100%;
-    height: 2px;
-    opacity: 1;
-    background: $neutralHurricane;
-  }
-
-  &__text-block {
-    margin-top: 3.2rem;
-    position: relative;
-  }
-
-  &__assets {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    bottom: 0;
-    overflow: hidden;
-  }
-
-  &__assets-1, // welcome sign
-  &__balloon,
-  &__cloud-yellow,
-  &__logo {
-    display: none;
-  }
-
-  // home garage
-  &__assets-last {
-    position: absolute;
-    right: -129px;
-    bottom: 7px;
-    width: 448px;
-  }
-
-  // dog walker
-  &__assets-0 {
-    position: absolute;
-    left: -247px;
-    bottom: 0;
-    width: 500px;
-  }
-
-  &__cloud-yellow-filled {
-    position: absolute;
-    left: -27px;
-    top: 184px;
-    width: 74px;
-  }
-
-  &__sun-cloud {
-    position: absolute;
-    right: -11px;
-    top: 230px;
-    width: 109px;
-  }
 }
 
-// In Figma this is the "S" break point for tablet
-@include break-md {
-  .home-hero {
-    min-height: 689px;
-
-    --borderBtmOffset: 10px;
-
-    &__text-block {
-      margin-top: 20rem;
-    }
-
-    &__balloon {
-      display: block;
-      position: absolute;
-      top: 38px;
-      right: 22px;
-      width: 208px;
-    }
-
-    &__cloud-yellow {
-      position: absolute;
-      left: 26px;
-      top: 38px;
-      display: block;
-      width: 220px;
-    }
-
-    &__cloud-yellow-filled {
-      left: -14px;
-      top: 123px;
-      width: 144px;
-    }
-
-    &__sun-cloud {
-      right: -48px;
-      top: 300px;
-      width: 160px;
-    }
-
-    // home garage
-    &__assets-last {
-      right: -54px;
-      bottom: 10px;
-      width: 610px;
-    }
-
-    // dog walker
-    &__assets-0 {
-      left: -410px;
-      bottom: 0;
-      width: 806px;
-    }
-  }
-}
-
-// In Figma this is the "M" break point for smaller width desktop
-@include break-lg {
-  .home-hero {
-    $textBlockMarginTop: 3.2rem;
-
-    min-height: 552px;
-    max-height: 689px;
-    // 76px = the height of the global nav on desktop
-    height: calc(100vh - 76px - $textBlockMarginTop);
-
-    &__text-block {
-      margin-top: $textBlockMarginTop;
-    }
-
-    &__logo {
-      display: block;
-      height: auto;
-      width: 214px;
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 4.8rem;
-    }
-
-    &__balloon {
-      top: 19px;
-      left: calc(50% + 200px);
-      right: unset;
-      width: 254px;
-    }
-
-    &__cloud-yellow {
-      top: 36px;
-      left: -11px;
-    }
-
-    &__cloud-yellow-filled {
-      left: -51px;
-      top: 121px;
-    }
-
-    &__sun-cloud {
-      top: 293px;
-      right: -13px;
-    }
-
-    // home garage
-    &__assets-last {
-      right: 0;
-    }
-
-    // dog walker
-    &__assets-0 {
-      bottom: 0;
-      left: -300px;
-    }
-  }
-}
-
-// In Figma this is the "XL" break point for larger width desktop
-@include break-xl {
-  .home-hero {
-    --borderBtmOffset: 10px;
-
-    &__balloon {
-      top: 45px;
-      left: calc(50% + 352px);
-    }
-
-    &__cloud-yellow {
-      top: 71px;
-      right: calc(50% + 511px);
-      left: unset;
-    }
-
-    &__cloud-yellow-filled {
-      top: 156px;
-      right: calc(50% + 630px);
-      left: unset;
-    }
-
-    &__sun-cloud {
-      top: 258px;
-      right: unset;
-      left: calc(50% + 575px);
-    }
-
-    // home garage
-    &__assets-last {
-      right: unset;
-      left: 53%;
-      bottom: 10px;
-    }
-
-    // welcome sign
-    &__assets-1 {
-      display: block;
-      width: 249px;
-      position: absolute;
-      left: 53.5%;
-      bottom: 11px;
-    }
-
-    // dog walker
-    &__assets-0 {
-      bottom: -4px;
-      left: unset;
-      right: calc(50% + 100px);
-      width: 1030px;
-    }
-  }
-}
+.contentDescription{
+  padding-right:20px;
+  line-height: 22px;
+}	

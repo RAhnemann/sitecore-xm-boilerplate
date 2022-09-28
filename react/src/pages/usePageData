@@ -1,0 +1,100 @@
+import { useEffect, useState } from 'react';
+import config from '../../scjssconfig.json';
+
+
+const media1 = '\u002F-\u002Fmedia\u002F';
+const media2 = '/-/media/';
+
+/**
+ * recursively look through object and add baseUrl to any media paths starting with `/-/media/`
+ *
+ * @param {string} baseUrl
+ * @param {any} obj this could be anything: string, number, object, Array of anything, null, bool, etc
+ * @returns the same object with updated image urls if that applies
+ */
+export function fixImageUrls(baseUrl, obj) {
+  const { origin } = new URL(baseUrl);
+
+  if (Array.isArray(obj)) {
+    return obj.map((o) => fixImageUrls(baseUrl, o));
+  }
+
+  if (obj && typeof obj === 'object') {
+    Object.keys(obj).forEach((key) => {
+      const val = obj[key];
+      if (typeof val === 'string' && (val.startsWith(media1) || val.startsWith(media2))) {
+        obj[key] = `${origin}${val}`;
+      }
+      if (Array.isArray(val)) {
+        obj[key] = val.map((o) => fixImageUrls(baseUrl, o));
+      }
+      if (val && typeof val === 'object') {
+        obj[key] = fixImageUrls(baseUrl, val);
+      }
+    });
+  }
+
+  return obj;
+}
+
+function createUrl(env, path) {
+  const { host, apiKey } = config?.sitecore?.layoutServiceHost || {};
+  if (!host || !apiKey) {
+    console.error(
+      `usePageData: Missing "${env}" environment's host or apiKey from scjssconfig.json`
+    );
+    return null;
+  }
+  const { origin } = new URL(host);
+  return `${origin}/sitecore/api/layout/render/jss?item=${path}&sc_apikey=${apiKey}`;
+}
+
+/**
+ *
+ * @param {object} param0
+ * @param {object} [param0.initialData] the initial data for the page
+ * @param {string} [param0.env] One of our three environment from the above ENVIRONMENTS constant
+ * @param {string} [param0.path] the path of the page
+ * @returns
+ */
+export default function usePageData({ initialData = {}, env, path }) {
+
+  const jssMain = initialData.sitecore?.route?.placeholders?.['jss-main'];
+
+  const [mainData, setMainData] = useState(jssMain);
+  const [sitecoreContext, setSitecoreContext] = useState(initialData.sitecore);
+
+  useEffect(() => {
+    if (!path || !env) return;
+    const url = createUrl(env, path);
+    if (!url) return;
+
+    fetch(url)
+      .then((response) => response.json())
+      .then((json) => {
+        const data = fixImageUrls(url, json);
+
+        try {
+          setMainData(data.sitecore.route.placeholders['jss-main']);
+        } catch (e) {
+          console.warn('usePageData: could not extract jss-main, using default');
+          console.error(e);
+        }
+
+        try {
+          setSitecoreContext(data.sitecore);
+        } catch (e) {
+          console.warn('usePageData: could not extract route fields, using default');
+          console.error(e);
+        }
+      })
+      .catch((e) => {
+        console.error('usePageData: Error fetching page data for:', url, ' - ', e.message);
+      });
+  }, [env, path]);
+
+  return {
+    mainData,
+    sitecoreContext,
+  };
+}

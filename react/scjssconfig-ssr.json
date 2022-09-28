@@ -1,0 +1,10 @@
+{
+  "sitecore": {
+    "instancePath": "..\\docker\\deploy\\website",
+    "apiKey": "{0FBE7936-25CA-4BFD-A7FB-BBFE5A890EBA}",
+    "deploySecret": "q6pk9704wni4g20c9wngex2ccisre6amflgg3ni7vk",
+    "deployUrl": "",
+    "layoutServiceHost": "https://demo-cd.dev.localhost",
+    "siteDefinitionName": "demo-site-cd"
+  }
+}

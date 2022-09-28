@@ -137,7 +137,8 @@
     "husky:pre-commit": "lint-staged",
     "husky:pre-push": "npm run test -- --watchAll=false",
     "coverage": "npm run test -- --coverage --watchAll=false",
-    "ssr-proxy": "npm run build && xcopy .\\build ..\\node-headless-ssr-proxy\\dist\\viu-jss-sxa-site /e /s /y && cd ../node-headless-ssr-proxy && npm install && npm run start"
+    "ssr-proxy": "npm run build && xcopy .\\build ..\\node-headless-ssr-proxy\\dist\\viu-jss-sxa-site /e /s /y && cd ../node-headless-ssr-proxy && npm install && npm run start",
+    "pagegen":  "pwsh -NoProfile -ExecutionPolicy Unrestricted -Command ./src/pages/GeneratePages.ps1"
   },
   "browserslist": [
     ">0.2%",
