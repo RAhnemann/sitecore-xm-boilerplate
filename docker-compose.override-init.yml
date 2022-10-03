@@ -13,19 +13,6 @@ services:
       - type: bind
         source: ${LOCAL_DATA_PATH}\mssql
         target: c:\data
-  solr:
-    isolation: ${ISOLATION}
-    image: ${SITECORE_DOCKER_REGISTRY}nonproduction/solr:8.8.2-${SITECORE_VERSION}
-    ports:
-      - "8984:8983"
-    volumes:
-      - type: bind
-        source: ${LOCAL_DATA_PATH}\solr
-        target: c:\data
-    environment:
-      SOLR_MODE: solrcloud
-    healthcheck:
-      test: ["CMD", "powershell", "-command", "try { $$statusCode = (iwr http://solr:8983/solr/admin/cores?action=STATUS -UseBasicParsing).StatusCode; if ($$statusCode -eq 200) { exit 0 } else { exit 1} } catch { exit 1 }"]
   mssql-init:
     isolation: ${ISOLATION}
     image: ${REGISTRY}${COMPOSE_PROJECT_NAME}-mssql-init:${VERSION:-latest}
@@ -44,10 +31,11 @@ services:
         condition: service_healthy
   solr-init:
     isolation: ${ISOLATION}
-    image: ${REGISTRY}${COMPOSE_PROJECT_NAME}-solr-init:${VERSION:-latest}
+    image: rahnemann/solr-init:1.0-servercore-1809
     environment:
-      SITECORE_SOLR_CONNECTION_STRING: http://solr:8983/solr
       SOLR_CORE_PREFIX_NAME: ${SOLR_CORE_PREFIX_NAME}
-    depends_on:
-      solr:
-        condition: service_healthy
+      TOPOLOGY: xm-sxa
+    volumes:
+      - type: bind
+        source: ${LOCAL_DATA_PATH}\solr
+        target: c:\solr
