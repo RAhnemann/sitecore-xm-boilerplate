@@ -1,0 +1,42 @@
+version: "3.9"
+
+services:
+  mssql:
+    isolation: ${ISOLATION}
+    image: ${SITECORE_DOCKER_REGISTRY}nonproduction/mssql-developer:2017-${EXTERNAL_IMAGE_TAG_SUFFIX}
+    environment:
+      SA_PASSWORD: ${SQL_SA_PASSWORD}
+      ACCEPT_EULA: "Y"
+    ports:
+      - "14330:1433"
+    volumes:
+      - type: bind
+        source: ${LOCAL_DATA_PATH}\sql
+        target: c:\data
+  mssql-init:
+    isolation: ${ISOLATION}
+    image:  ${SITECORE_DOCKER_REGISTRY}sitecore-xm1-mssql-init:${SITECORE_VERSION}
+    environment: 
+      SQL_SERVER: ${SQL_SERVER}
+      SQL_ADMIN_LOGIN: ${SQL_SA_LOGIN}
+      SQL_ADMIN_PASSWORD: ${SQL_SA_PASSWORD}
+      SITECORE_ADMIN_PASSWORD: ${SITECORE_ADMIN_PASSWORD}
+      SQL_DATABASE_PREFIX: sitecore
+      POST_DEPLOYMENT_WAIT_PERIOD: 300
+    healthcheck:
+      test: ["CMD", "powershell", "-command", "if ([System.Environment]::GetEnvironmentVariable('DatabasesDeploymentStatus', 'Machine') -eq 'Complete') { exit 0 } else { exit 1}"]
+      start_period: 300s
+      interval: 5s
+    depends_on:
+      mssql:
+        condition: service_healthy
+  solr-init:
+    isolation: ${ISOLATION}
+    image: rahnemann/solr-init:1.0-1809
+    environment:
+      SOLR_CORE_PREFIX_NAME: ${SOLR_CORE_PREFIX_NAME}
+      TOPOLOGY: xm-sxa
+    volumes:
+      - type: bind
+        source: ${LOCAL_DATA_PATH}\solr
+        target: c:\solr

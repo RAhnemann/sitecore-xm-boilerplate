@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+	<configBuilders>
+		<builders>
+			<add name="SitecoreAppSettingsBuilder" mode="Greedy" xdt:Transform="SetAttributes" xdt:Locator="Match(name)" />
+            <add name="SitecoreConnectionStringsBuilder" mode="Greedy" xdt:Transform="SetAttributes" xdt:Locator="Match(name)" />
+		</builders>
+	</configBuilders>
+</configuration>
