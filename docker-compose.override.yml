@@ -53,7 +53,7 @@ services:
   mssql:
     volumes:
       - type: bind
-        source: .\docker\data\sql
+        source: .\docker\data\mssql
         target: c:\data
         
   # Mount our Solr data folder and use our retagged Solr image.

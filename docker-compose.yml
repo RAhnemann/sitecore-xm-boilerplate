@@ -34,7 +34,7 @@ services:
       - "14330:1433"
     volumes:
       - type: bind
-        source: .\mssql-data
+        source: .\docker\data\mssql
         target: c:\data
   solr:
     isolation: ${ISOLATION}
@@ -43,7 +43,7 @@ services:
       - "8984:8983"
     volumes:
       - type: bind
-        source: .\solr-data
+        source: .\docker\data\solr
         target: c:\data
     environment:
       SOLR_MODE: standalone

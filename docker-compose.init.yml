@@ -11,7 +11,7 @@ services:
       - "14330:1433"
     volumes:
       - type: bind
-        source: ${LOCAL_DATA_PATH}\sql
+        source: ${LOCAL_DATA_PATH}\mssql
         target: c:\data
   mssql-init:
     isolation: ${ISOLATION}
@@ -32,7 +32,7 @@ services:
         condition: service_healthy
   solr-init:
     isolation: ${ISOLATION}
-    image: rahnemann/solr-init:1.0-1809
+    image: rahnemann/solr-init:1.0-ltsc2022
     environment:
       SOLR_CORE_PREFIX_NAME: ${SOLR_CORE_PREFIX_NAME}
       TOPOLOGY: xm-sxa

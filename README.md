@@ -3,7 +3,6 @@
 - Sitecore XM 10.4.0-ltsc2022
 - SPE 7.0
 - SXA 10.4
-- Sitecore CLI 5.1.25
 - Headless Services 22
 - Custom Images:
   - Windows Hosts Writer
@@ -42,4 +41,4 @@
    - Once you do, hit Ctrl + C
 6. Start Sitecore: `docker compose up -d --remove-orphans` (--remove-orphans first time only)
 7. Open https://cm.whatever.local/sitecore for CM
-8. At this point, you can create your headless application and map it into the rendering container
+8. At this point, you can create your headless application and map it into the rendering container (and disable the "replicas: 0")
