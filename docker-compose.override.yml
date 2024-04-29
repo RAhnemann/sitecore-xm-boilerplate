@@ -6,12 +6,13 @@ services:
     deploy:
       replicas: 0
 
+  # Change the volume mount here!
   rendering:
     image: ${REGISTRY}${COMPOSE_PROJECT_NAME}-rendering:${VERSION:-latest}
     deploy:
       replicas: 0
     volumes:
-      - .\src\healthsystementerprise:C:\app
+      - .\src\whatever :C:\app
     environment:
       SITECORE_API_HOST: "http://cm"
       NEXTJS_DIST_DIR: ".next-container"
